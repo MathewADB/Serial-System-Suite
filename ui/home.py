@@ -1,5 +1,8 @@
 from PyQt6.QtWidgets import (
-    QWidget, QVBoxLayout, QHBoxLayout, QComboBox, QLabel, QTextEdit, QLineEdit)
+    QWidget, QVBoxLayout, QHBoxLayout, QComboBox, QLabel, QTextEdit, QLineEdit, QPushButton)
+
+from core.serial import refresh_ports,port_open,port_close
+from functools import partial
 
 def create_home_page(main_window):
     
@@ -15,6 +18,8 @@ def create_home_page(main_window):
     setup_layout = QHBoxLayout(setup_widget)
     
     main_window.port_box = QComboBox()
+    refresh_ports(main_window)
+        
     main_window.baud_box = QComboBox()
     
     main_window.baud_box.addItems([
@@ -23,11 +28,19 @@ def create_home_page(main_window):
     ])
     main_window.baud_box.setCurrentText("57600")
     
-    main_window.status_label = QLineEdit("Errors will be shown here")
+    main_window.err_box = QTextEdit("Errors will be shown here")
     
+    open_button = QPushButton("Open Port")
+    open_button.pressed.connect(partial(port_open, main_window))
+    
+    close_button = QPushButton("Close Port")
+    close_button.pressed.connect(partial(port_close, main_window))
+
     setup_layout.addWidget(main_window.port_box,1)
     setup_layout.addWidget(main_window.baud_box,1)
-    setup_layout.addWidget(main_window.status_label,1)
+    setup_layout.addWidget(open_button,1)
+    setup_layout.addWidget(close_button,1)
+    setup_layout.addWidget(main_window.err_box,1)
     
     terminal_widget = QWidget()
     terminal_widget.setObjectName("IWidget")
@@ -46,7 +59,7 @@ def create_home_page(main_window):
     name_container = QVBoxLayout(name_widget)
     name_label = QLabel("Serial System Suite")
     
-    version_label = QLabel("1.1.1")
+    version_label = QLabel("1.1.2")
     device_label = QLabel("Null")
     status_label = QLabel("Disconnected")
     

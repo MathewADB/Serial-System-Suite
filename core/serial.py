@@ -13,13 +13,13 @@ def port_open(self):
         self.ser.port = self.port_box.currentText()
         self.ser.baudrate = int(self.baud_box.currentText())
         self.ser.open()
-        self.set_on_off(True)
+        #self.set_on_off(True)
     except Exception as e:
-        self.log_error(str(e))
+        self.err_box.append(str(e))
 
 def port_close(self):
     try:
         self.ser.close()
-        self.set_on_off(False)
+        #self.set_on_off(False)
     except:
         pass
