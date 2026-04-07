@@ -1,0 +1,66 @@
+from PyQt6.QtWidgets import (
+    QWidget, QVBoxLayout, QHBoxLayout, QComboBox, QLabel, QTextEdit, QLineEdit)
+
+def create_home_page(main_window):
+    
+    main_window.containerwidget = QWidget()
+    main_window.containerwidget.setObjectName("XWidget")
+
+    container_layout = QVBoxLayout(main_window.containerwidget)
+    container_layout.setContentsMargins(0, 0, 0, 0) 
+    container_layout.setSpacing(0)
+    
+    setup_widget = QWidget()
+    setup_widget.setObjectName("IWidget")
+    setup_layout = QHBoxLayout(setup_widget)
+    
+    main_window.port_box = QComboBox()
+    main_window.baud_box = QComboBox()
+    
+    main_window.baud_box.addItems([
+        "110","300","600","1200","2400","4800","9600",
+        "19200","38400","57600","115200","230400"
+    ])
+    main_window.baud_box.setCurrentText("57600")
+    
+    main_window.status_label = QLineEdit("Errors will be shown here")
+    
+    setup_layout.addWidget(main_window.port_box,1)
+    setup_layout.addWidget(main_window.baud_box,1)
+    setup_layout.addWidget(main_window.status_label,1)
+    
+    terminal_widget = QWidget()
+    terminal_widget.setObjectName("IWidget")
+    terminal_layout = QHBoxLayout(terminal_widget)
+    
+    main_window.terminal_box = QTextEdit()
+    
+    terminal_layout.addWidget(main_window.terminal_box)
+    
+    info_widget = QWidget()
+    info_widget.setObjectName("IWidget")
+    info_layout = QHBoxLayout(info_widget)
+    
+    name_widget = QWidget()
+    name_widget.setObjectName("IWidget")
+    name_container = QVBoxLayout(name_widget)
+    name_label = QLabel("Serial System Suite")
+    
+    version_label = QLabel("1.1.1")
+    device_label = QLabel("Null")
+    status_label = QLabel("Disconnected")
+    
+    name_container.addWidget(name_label)
+    name_container.addWidget(version_label)
+    
+    info_layout.addWidget(name_widget)
+    info_layout.addWidget(device_label)
+    info_layout.addWidget(status_label)
+            
+    container_layout.addWidget(info_widget,1)
+    container_layout.addWidget(terminal_widget,8)
+    container_layout.addWidget(setup_widget,1)        
+
+    main_window.setCentralWidget(main_window.containerwidget)
+    
+    main_window.setCentralWidget(main_window.containerwidget)
