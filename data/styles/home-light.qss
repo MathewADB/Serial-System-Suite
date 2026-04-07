@@ -1,0 +1,248 @@
+/* Home Light – with more soft blue */
+
+/* ------------------------------------------------------------------ */
+/* General widget & text colours */
+QWidget#XWidget {
+    background-color: #ffffff;          /* white main background */
+    color: #212121;                     /* dark text */
+    font-family: Segoe UI;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+QWidget, QLabel, QPushButton, QLineEdit, QTextEdit,
+QComboBox, QCheckBox, QMenu, QMenuBar, QTabBar, QToolTip {
+    color: #212121;                     /* dark text */
+    font-family: Segoe UI;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* ------------------------------------------------------------------ */
+/* Inner container (cards, panels, etc.) */
+QWidget#IWidget {
+    background-color: #e3f2fd;          /* soft blue background */
+    border-radius: 8px;
+    border: 1px solid #bbdefb;          /* light blue border */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Dialogs */
+QDialog {
+    background-color: #ffffff;
+    border-radius: 8px;
+}
+
+/* ------------------------------------------------------------------ */
+/* Tab widget */
+QTabWidget::pane {
+    background-color: #e3f2fd;          /* soft blue panel */
+    border: 1px solid #bbdefb;
+    border-radius: 5px;
+}
+
+/* Individual tabs */
+QTabBar::tab {
+    background-color: #ffffff;
+    color: #212121;
+    padding: 10px 15px;
+    border: 1px solid #bbdefb;
+    border-bottom: none;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    font-weight: normal;
+}
+
+/* Selected tab */
+QTabBar::tab:selected {
+    background-color: #90caf9;          /* accent */
+    color: #ffffff;                     /* white text on accent */
+    border-bottom: 2px solid #64b5f6;   /* slightly lighter accent */
+    font-weight: bold;
+}
+
+/* Hovered tab */
+QTabBar::tab:hover {
+    background-color: #bbdefb;          /* soft blue tint */
+    color: #212121;
+}
+
+/* ------------------------------------------------------------------ */
+/* Calendar widget */
+QCalendarWidget {
+    background-color: #e3f2fd;          /* soft blue background */
+    color: #212121;
+    border: 1px solid #bbdefb;
+    border-radius: 8px;
+}
+
+/* Navigation bar inside the calendar */
+QCalendarWidget QWidget#qt_calendar_navigationbar {
+    background-color: #bbdefb;          /* light blue */
+    color: #212121;
+    border-radius: 8px;
+    padding: 6px;
+}
+
+/* Calendar buttons (prev/next, today, etc.) */
+QCalendarWidget QAbstractButton {
+    background-color: #bbdefb;
+    color: #212121;
+    border-radius: 6px;
+    min-width: 28px;
+    min-height: 28px;
+    font-weight: bold;
+}
+QCalendarWidget QAbstractButton:hover {
+    background-color: #90caf9;          /* accent on hover */
+    color: #ffffff;
+}
+
+/* Calendar day‑grid */
+QCalendarWidget QTableView {
+    background-color: #ffffff;
+    border: 1px solid #bbdefb;
+    border-radius: 5px;
+}
+
+/* Calendar tool buttons (month/year selectors) */
+QCalendarWidget QToolButton,
+QCalendarWidget QPushButton {
+    background-color: #ffffff;
+    color: #212121;
+    border-radius: 6px;
+    padding: 6px;
+    font-weight: bold;
+}
+QCalendarWidget QToolButton:hover,
+QCalendarWidget QPushButton:hover {
+    background-color: #bbdefb;
+    color: #212121;
+}
+
+/* ------------------------------------------------------------------ */
+/* Push buttons */
+QPushButton {
+    background-color: #ffffff;
+    color: #212121;
+    border: 1px solid #bbdefb;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+QPushButton:hover {
+    background-color: #bbdefb;
+    border-color: #90caf9;
+    color: #212121;
+}
+QPushButton:pressed {
+    background-color: #90caf9;
+    color: #ffffff;
+}
+QPushButton:disabled {
+    background-color: #f5f5f5;
+    color: #90a4ae;
+    border-color: #bbdefb;
+}
+
+/* ------------------------------------------------------------------ */
+/* Line edit / text edit */
+QLineEdit, QTextEdit {
+    background-color: #ffffff;
+    color: #212121;
+    border: 1px solid #bbdefb;
+    border-radius: 8px;
+    padding: 6px;
+    selection-background-color: #90caf9;
+    selection-color: #ffffff;
+}
+QLineEdit:focus, QTextEdit:focus {
+    border: 1px solid #90caf9;
+}
+QLineEdit::placeholder {
+    color: #90a4ae;
+}
+
+/* ------------------------------------------------------------------ */
+/* Combo box */
+QComboBox {
+    background-color: #ffffff;
+    color: #212121;
+    border: 1px solid #bbdefb;
+    border-radius: 8px;
+    padding: 6px;
+}
+QComboBox QAbstractItemView {
+    background-color: #e3f2fd;
+    color: #212121;
+    selection-background-color: #90caf9;
+    selection-color: #ffffff;
+}
+
+/* ------------------------------------------------------------------ */
+/* Check box */
+QCheckBox {
+    color: #212121;
+    spacing: 8px;
+}
+QCheckBox::indicator {
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+}
+QCheckBox::indicator:unchecked {
+    border: 1px solid #90a4ae;
+    background-color: #ffffff;
+}
+QCheckBox::indicator:checked {
+    background-color: #90caf9;
+    border: 1px solid #90caf9;
+}
+
+/* ------------------------------------------------------------------ */
+/* Menus & menu bar */
+QMenuBar {
+    background-color: #ffffff;
+    color: #212121;
+}
+QMenuBar::item:selected {
+    background-color: #bbdefb;
+    color: #212121;
+}
+QMenu {
+    background-color: #ffffff;
+    color: #212121;
+    border: 1px solid #bbdefb;
+    border-radius: 8px;
+    padding: 4px;
+}
+QMenu::item:selected {
+    background-color: #90caf9;
+    color: #ffffff;
+}
+
+/* ------------------------------------------------------------------ */
+/* Scroll bar (vertical) */
+QScrollBar:vertical {
+    background-color: #f5f5f5;
+    width: 12px;
+    border-radius: 6px;
+}
+QScrollBar::handle:vertical {
+    background-color: #bbdefb;
+    border-radius: 6px;
+}
+QScrollBar::handle:hover {
+    background-color: #90caf9;
+}
+
+/* ------------------------------------------------------------------ */
+/* Tool tip */
+QToolTip {
+    background-color: #ffffff;
+    color: #212121;
+    border: 1px solid #bbdefb;
+    border-radius: 4px;
+    padding: 5px;
+}

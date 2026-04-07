@@ -1,0 +1,14 @@
+Style Configuration
+
+Defualt theme :
+new-dark
+
+Current theme :
+new-dark
+
+included styles :
+Matrix % Dark % Light % Lux % Warm % Classic % Nature % Home-Dark % Home-Light % New-Dark
+
+* You can change the theme of your application by changing 'current theme' to another theme *
+* You can also change the default theme but we do not recommend doing so unless you know what you are doing *
+* We do not recommend changing included styles *

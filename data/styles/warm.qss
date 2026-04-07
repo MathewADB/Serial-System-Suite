@@ -1,0 +1,215 @@
+QWidget#XWidget {
+    background-color: #f6f2eb;   
+    color: #2c241b;            
+    font-family: Segoe UI;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+QWidget, QLabel, QPushButton, QLineEdit, QTextEdit, QComboBox, QCheckBox, QMenu, QMenuBar, QTabBar, QToolTip {
+    color: #2c241b;              
+    font-family: Segoe UI;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+QWidget#IWidget {
+    background-color: #ffffff;
+    border-radius: 5px;
+    border: 1px solid #e2d6c6;
+}
+
+QDialog {
+    background-color: #f6f2eb;
+}
+
+QTabWidget::pane {
+    background-color: #f3ece4;
+    border: 1px solid #e2d6c6;
+}
+
+QTabBar::tab {
+    background-color: #ede3d6;
+    color: #6b5846;       
+    padding: 8px 12px;
+    border: 1px solid #e2d6c6;
+    border-bottom: none;
+}
+
+QTabBar::tab:selected {
+    background-color: #ffffff;
+    color: #2c241b;      
+    border-bottom: 2px solid #c47a2c;
+}
+
+QTabBar::tab:hover {
+    background-color: #e4d3bd;
+    color: #1f1a14;
+}
+
+QCalendarWidget {
+    background-color: #f3ece4;
+    color: #2c241b;
+    border: 1px solid #e2d6c6;
+    border-radius: 5px;
+}
+
+QCalendarWidget QWidget#qt_calendar_navigationbar {
+    background-color: #ede3d6;
+    color: #2c241b;
+    border-radius: 5px;
+    padding: 4px;
+}
+
+QCalendarWidget QAbstractButton {
+    background-color: #e4d3bd;
+    color: #2c241b;
+    border-radius: 4px;
+    min-width: 20px;
+    min-height: 20px;
+}
+
+QCalendarWidget QAbstractButton:hover {
+    background-color: #c47a2c;
+    color: #ffffff;
+}
+
+QCalendarWidget QWidget {
+    color: #2c241b;
+}
+
+QCalendarWidget QTableView {
+    background-color: #ffffff;
+    border: 1px solid #e2d6c6;
+}
+
+QCalendarWidget QToolButton, QCalendarWidget QPushButton {
+    background-color: #ede3d6;
+    color: #2c241b;
+    border-radius: 4px;
+    padding: 4px;
+}
+
+QCalendarWidget QToolButton:hover, QCalendarWidget QPushButton:hover {
+    background-color: #e4d3bd;
+    color: #1f1a14;
+}
+
+QPushButton {
+    background-color: #ede3d6;
+    color: #2c241b;
+    border: 1px solid #d6c2ad;
+    border-radius: 5px;
+    padding: 6px 12px;
+}
+
+QPushButton:hover {
+    background-color: #e4d3bd;
+    border-color: #c47a2c;
+    color: #1f1a14;
+}
+
+QPushButton:pressed {
+    background-color: #dbc4aa;
+    color: #2c241b;
+}
+
+QPushButton:disabled {
+    background-color: #f3ece4;
+    color: #a89a8c;
+    border-color: #e2d6c6;
+}
+
+QLineEdit, QTextEdit {
+    background-color: #ffffff;
+    color: #2c241b;              
+    border: 1px solid #e2d6c6;
+    border-radius: 4px;
+    padding: 4px;
+    selection-background-color: #c47a2c;
+    selection-color: #ffffff;
+}
+
+QLineEdit:focus, QTextEdit:focus {
+    border: 1px solid #c47a2c;
+}
+
+QLineEdit::placeholder {
+    color: #b7a999;
+}
+
+QComboBox {
+    background-color: #ffffff;
+    color: #2c241b;
+    border: 1px solid #e2d6c6;
+    border-radius: 4px;
+    padding: 4px;
+}
+
+QComboBox QAbstractItemView {
+    background-color: #f6f2eb;
+    color: #2c241b;
+    selection-background-color: #c47a2c;
+    selection-color: #ffffff;
+}
+
+QCheckBox {
+    color: #2c241b;
+    spacing: 6px;
+}
+
+QCheckBox::indicator {
+    width: 14px;
+    height: 14px;
+}
+
+QCheckBox::indicator:unchecked {
+    border: 1px solid #a8917b;
+    background-color: #ffffff;
+}
+
+QCheckBox::indicator:checked {
+    background-color: #c47a2c;
+    border: 1px solid #c47a2c;
+}
+
+QMenuBar {
+    background-color: #ede3d6;
+    color: #2c241b;
+}
+
+QMenuBar::item:selected {
+    background-color: #e4d3bd;
+    color: #1f1a14;
+}
+
+QMenu {
+    background-color: #f6f2eb;
+    color: #2c241b;
+    border: 1px solid #e2d6c6;
+}
+
+QMenu::item:selected {
+    background-color: #c47a2c;
+    color: #ffffff;
+}
+
+QScrollBar:vertical {
+    background-color: #f6f2eb;
+    width: 10px;
+}
+
+QScrollBar::handle:vertical {
+    background-color: #d6c2ad;
+    border-radius: 4px;
+}
+
+QScrollBar::handle:hover {
+    background-color: #c47a2c;
+}
+
+QToolTip {
+    background-color: #ede3d6;
+    color: #2c241b;
+    border: 1px solid #d6c2ad;
+}
