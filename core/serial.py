@@ -13,13 +13,13 @@ def port_open(self):
         self.ser.port = self.port_box.currentText()
         self.ser.baudrate = int(self.baud_box.currentText())
         self.ser.open()
-        #self.set_on_off(True)
+        self.status_label.setText("Connected")
     except Exception as e:
-        self.err_box.append(str(e))
+        self.err_box.setText(str(e))
 
 def port_close(self):
     try:
         self.ser.close()
-        #self.set_on_off(False)
+        self.status_label.setText("Disconnected")
     except:
         pass

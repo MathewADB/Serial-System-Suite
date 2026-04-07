@@ -28,7 +28,7 @@ def create_home_page(main_window):
     ])
     main_window.baud_box.setCurrentText("57600")
     
-    main_window.err_box = QTextEdit("Errors will be shown here")
+    main_window.err_box = QLineEdit("Errors will be shown here")
     
     open_button = QPushButton("Open Port")
     open_button.pressed.connect(partial(port_open, main_window))
@@ -59,16 +59,16 @@ def create_home_page(main_window):
     name_container = QVBoxLayout(name_widget)
     name_label = QLabel("Serial System Suite")
     
-    version_label = QLabel("1.1.2")
+    version_label = QLabel("1.1.3")
     device_label = QLabel("Null")
-    status_label = QLabel("Disconnected")
+    main_window.status_label = QLabel("Disconnected")
     
     name_container.addWidget(name_label)
     name_container.addWidget(version_label)
     
     info_layout.addWidget(name_widget)
     info_layout.addWidget(device_label)
-    info_layout.addWidget(status_label)
+    info_layout.addWidget(main_window.status_label)
             
     container_layout.addWidget(info_widget,1)
     container_layout.addWidget(terminal_widget,8)
