@@ -10,16 +10,20 @@ def refresh_ports(self):
 def port_open(self):
     try:
         self.ser.close()
-        self.ser.port = self.port_box.currentText()
-        self.ser.baudrate = int(self.baud_box.currentText())
+        
+        port_text = self.port_lbl.text()
+        baud_text = self.baud_lbl.text()
+
+        self.ser.port = port_text
+        self.ser.baudrate = int(baud_text)
+
         self.ser.open()
-        self.status_label.setText("Connected")
+
     except Exception as e:
         self.err_box.setText(str(e))
 
 def port_close(self):
     try:
         self.ser.close()
-        self.status_label.setText("Disconnected")
     except:
         pass
