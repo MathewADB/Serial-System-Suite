@@ -1,6 +1,5 @@
 import serial
 import serial.tools.list_ports
-from PyQt6.QtCore import QTimer
 
 def refresh_ports(self):
     self.port_box.clear()
@@ -24,7 +23,7 @@ def port_open(self):
         self.status_lbl.setText("Connected")
 
     except Exception as e:
-        self.err_box.setText(str(e))
+        self.err_box.append(str(e))
 
 def port_close(self):
     try:
@@ -43,7 +42,7 @@ def receive_data(self):
         raw_data = self.ser.read(self.ser.in_waiting)
         
     except Exception as e:
-        self.err_box.setText(str(e))
+        self.err_box.append(str(e))
         return
 
     decoded = list(raw_data)

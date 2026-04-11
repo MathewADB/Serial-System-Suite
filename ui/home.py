@@ -1,5 +1,5 @@
 from PyQt6.QtWidgets import (
-    QWidget, QVBoxLayout, QHBoxLayout, QComboBox, QLabel, QTextEdit, QLineEdit, QPushButton)
+    QWidget, QVBoxLayout, QHBoxLayout, QLabel, QTextEdit, QPushButton)
 
 from functools import partial
 from ui.port_settings import PortSettingsDialog
@@ -34,7 +34,12 @@ def create_home_page(main_window):
     settingsButton = QPushButton("Port Settings")
     settingsButton.pressed.connect(open_settings)
     
-    main_window.err_box = QLineEdit("Errors will be shown here")
+    port_widget = QWidget()
+    port_widget.setObjectName("IWidget")
+    port_layout = QVBoxLayout(port_widget)
+    
+    main_window.err_box = QTextEdit("Errors will be displayed here ...")
+    main_window.err_box.setReadOnly(True)
     
     open_button = QPushButton("Open Port")
     open_button.pressed.connect(partial(port_open, main_window))
@@ -42,9 +47,11 @@ def create_home_page(main_window):
     close_button = QPushButton("Close Port")
     close_button.pressed.connect(partial(port_close, main_window))
 
-    setup_layout.addWidget(settingsButton,1)
-    setup_layout.addWidget(open_button,1)
-    setup_layout.addWidget(close_button,1)
+    port_layout.addWidget(settingsButton,1)
+    port_layout.addWidget(open_button,1)
+    port_layout.addWidget(close_button,1)
+    
+    setup_layout.addWidget(port_widget)
     setup_layout.addWidget(main_window.err_box,1)
     
     # ===== MID WIDGET
@@ -68,7 +75,7 @@ def create_home_page(main_window):
     name_container = QVBoxLayout(name_widget)
     
     name_label = QLabel("Serial System Suite")
-    version_label = QLabel("1.2.2")
+    version_label = QLabel("1.2.3")
     main_window.port_lbl = QLabel("None")
     main_window.baud_lbl = QLabel("56000")
     main_window.status_lbl = QLabel("Disconnected")
