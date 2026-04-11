@@ -8,21 +8,34 @@ from core.serial import receive_data
 
 import serial
 
+
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
-        
+
         self.setWindowTitle("Serial System Suite")
         self.setWindowState(Qt.WindowState.WindowMaximized)
-        
+
         self.ser = serial.Serial()
-        
+
         create_home_page(self)
         init_shortcuts(self)
-        
+
         self.timer = QTimer()
         self.timer.timeout.connect(partial(receive_data, self))
         self.timer.start(100)
-        
-        
 
+    def closeEvent(self, event):
+        try:
+            if hasattr(self, "timer"):
+                self.timer.stop()
+
+            if hasattr(self, "ser") and self.ser.is_open:
+                self.ser.reset_input_buffer()
+                self.ser.reset_output_buffer()
+                self.ser.close()
+
+        except Exception as e:
+            print("Shutdown error:", e)
+
+        event.accept()

@@ -1,16 +1,16 @@
 # Serial System Suite
 
-Serial System Suite (SSS) is an application created as a test project for testing and receiving data from serial ports
+Serial System Suite (SSS) is an application created as a test project for testing and communicating with serial ports
 
-Serial System Suite — V1.1.3
+Serial System Suite — V1.3.3
 
 
 
 #### Overview
 
-Version 2 of Serial System Suite is a lightweight desktop application for basic serial communication.
+Version 3 of Serial System Suite is a lightweight desktop application for basic serial communication.
 
-It allows users to detect, connect and read data from a serial (COM). This version establishes the foundation for a larger industrial monitoring platform.
+It allows users to detect, connect, send data and read data from a serial (COM). This version establishes the foundation for a larger industrial monitoring platform.
 
 
 
@@ -24,7 +24,9 @@ Manual connect / disconnect
 
 Status indication (connected / disconnected)
 
-See the incoming data as decimals
+See the incoming data as decimal
+
+Send data as decimal
 
 User Interface
 
@@ -38,15 +40,19 @@ The separation ensures future extensibility.
 
 #### How It Works
 
-open port settings
+Open port settings
 
 Select a COM port
 
 Choose a baud rate
 
-apply the settings
+Apply the settings
 
 Connect to the device
+
+Write data in TX
+
+Click send to send the data
 
 
 
@@ -66,7 +72,7 @@ python main.py
 
 Launch the application
 
-Select the desired COM port
+Select the desired COM port from available ports
 
-Click connect
+Connect and communicate with the port
 

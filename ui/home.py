@@ -89,7 +89,7 @@ def create_home_page(main_window):
     name_container = QVBoxLayout(name_widget)
     
     name_label = QLabel("Serial System Suite")
-    version_label = QLabel("1.3.1")
+    version_label = QLabel("1.3.2")
     main_window.port_lbl = QLabel("None")
     main_window.baud_lbl = QLabel("56000")
     main_window.status_lbl = QLabel("Disconnected")

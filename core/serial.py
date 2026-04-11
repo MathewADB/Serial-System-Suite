@@ -50,5 +50,9 @@ def receive_data(self):
     self.rx_box.append(str(decoded))
     
 def send_data(self):
-    data = self.tx_box.text()
-    self.ser.write(data.encode())
+    try :
+        data = int(self.tx_box.text())
+        self.ser.write(bytes([data]))
+    except Exception as e:
+        self.err_box.append(str(e))
+        return
