@@ -48,3 +48,7 @@ def receive_data(self):
     decoded = list(raw_data)
 
     self.rx_box.append(str(decoded))
+    
+def send_data(self):
+    data = self.tx_box.text()
+    self.ser.write(data.encode())

@@ -1,9 +1,9 @@
 from PyQt6.QtWidgets import (
-    QWidget, QVBoxLayout, QHBoxLayout, QLabel, QTextEdit, QPushButton)
+    QWidget, QVBoxLayout, QHBoxLayout, QLabel, QTextEdit, QPushButton, QLineEdit)
 
 from functools import partial
 from ui.port_settings import PortSettingsDialog
-from core.serial import port_open, port_close
+from core.serial import port_open, port_close, send_data
 
 def create_home_page(main_window):
     
@@ -60,9 +60,23 @@ def create_home_page(main_window):
     terminal_widget.setObjectName("IWidget")
     terminal_layout = QHBoxLayout(terminal_widget)
     
+    sending_widget = QWidget()
+    sending_widget.setObjectName("IWidget")
+    sending_layout = QVBoxLayout(sending_widget)
+        
+    main_window.tx_box = QLineEdit()
+    
+    send_btn = QPushButton("Send")
+    send_btn.clicked.connect(partial(send_data, main_window))
+    
+    sending_layout.addWidget(QLabel("TX"))
+    sending_layout.addWidget(main_window.tx_box)
+    sending_layout.addWidget(send_btn)
+    
     main_window.rx_box = QTextEdit()
     
-    terminal_layout.addWidget(main_window.rx_box)
+    terminal_layout.addWidget(main_window.rx_box,1)
+    terminal_layout.addWidget(sending_widget)
     
     # ===== TOP WIDGET
     
@@ -75,7 +89,7 @@ def create_home_page(main_window):
     name_container = QVBoxLayout(name_widget)
     
     name_label = QLabel("Serial System Suite")
-    version_label = QLabel("1.2.3")
+    version_label = QLabel("1.3.1")
     main_window.port_lbl = QLabel("None")
     main_window.baud_lbl = QLabel("56000")
     main_window.status_lbl = QLabel("Disconnected")

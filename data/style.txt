@@ -4,7 +4,7 @@ Defualt theme :
 new-dark
 
 Current theme :
-new-dark
+new_dark
 
 included styles :
 Matrix % Dark % Light % Lux % Warm % Classic % Nature % Home-Dark % Home-Light % New-Dark
