@@ -53,9 +53,9 @@ def create_home_page(main_window):
     terminal_widget.setObjectName("IWidget")
     terminal_layout = QHBoxLayout(terminal_widget)
     
-    main_window.terminal_box = QTextEdit()
+    main_window.rx_box = QTextEdit()
     
-    terminal_layout.addWidget(main_window.terminal_box)
+    terminal_layout.addWidget(main_window.rx_box)
     
     # ===== TOP WIDGET
     
@@ -68,17 +68,25 @@ def create_home_page(main_window):
     name_container = QVBoxLayout(name_widget)
     
     name_label = QLabel("Serial System Suite")
-    version_label = QLabel("1.2.1")
+    version_label = QLabel("1.2.2")
     main_window.port_lbl = QLabel("None")
     main_window.baud_lbl = QLabel("56000")
+    main_window.status_lbl = QLabel("Disconnected")
     
     name_container.addWidget(name_label)
     name_container.addWidget(version_label)
     
+    connection_widget = QWidget()
+    connection_widget.setObjectName("IWidget")
+    connection_layout = QVBoxLayout(connection_widget)
+    
+    connection_layout.addWidget(main_window.port_lbl,1)
+    connection_layout.addWidget(main_window.baud_lbl,1)
+    connection_layout.addWidget(main_window.status_lbl,1)
+    
     info_layout.addWidget(name_widget,1)
-    info_layout.addWidget(main_window.port_lbl,1)
-    info_layout.addWidget(main_window.baud_lbl,1)
     info_layout.addWidget(QLabel(),2)
+    info_layout.addWidget(connection_widget)
     
     # ===== FINALE
     

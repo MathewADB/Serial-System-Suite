@@ -30,19 +30,23 @@ class PortSettingsDialog(QDialog):
         refresh_btn = QPushButton("Refresh")
         refresh_btn.clicked.connect(partial(refresh_ports, self))
         
+        close_panel = QHBoxLayout()
+        
         apply_btn = QPushButton("Apply")
         apply_btn.clicked.connect(self.apply_and_close)
         
         close_btn = QPushButton("Close")
         close_btn.clicked.connect(self.close)
         
+        close_panel.addWidget(close_btn)
+        close_panel.addWidget(apply_btn)
+        
         layout.addWidget(QLabel("Port Settings"))
 
         layout.addWidget(self.port_box)
         layout.addWidget(self.baud_box)
         layout.addWidget(refresh_btn)
-        layout.addWidget(apply_btn)
-        layout.addWidget(close_btn)
+        layout.addLayout(close_panel)
         
         self.setLayout(layout)
     

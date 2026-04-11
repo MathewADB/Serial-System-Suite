@@ -1,6 +1,6 @@
 # Serial System Suite
 
-Serial System Suite (SSS) is an application created as a test project for testing serial ports
+Serial System Suite (SSS) is an application created as a test project for testing and receiving data from serial ports
 
 Serial System Suite — V1.1.3
 
@@ -8,9 +8,9 @@ Serial System Suite — V1.1.3
 
 #### Overview
 
-Version 1 of Serial System Suite is a lightweight desktop application for basic serial communication.
+Version 2 of Serial System Suite is a lightweight desktop application for basic serial communication.
 
-It allows users to detect and connect to a serial (COM). This version establishes the foundation for a larger industrial monitoring platform.
+It allows users to detect, connect and read data from a serial (COM). This version establishes the foundation for a larger industrial monitoring platform.
 
 
 
@@ -24,6 +24,8 @@ Manual connect / disconnect
 
 Status indication (connected / disconnected)
 
+See the incoming data as decimals
+
 User Interface
 
 The interface is minimal and focused on functionality:
@@ -36,9 +38,13 @@ The separation ensures future extensibility.
 
 #### How It Works
 
+open port settings
+
 Select a COM port
 
 Choose a baud rate
+
+apply the settings
 
 Connect to the device
 
